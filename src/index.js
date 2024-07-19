@@ -9,5 +9,8 @@ dotenv.config({
 const PORT = process.env.PORT || 8000
 
 connectDB()
-    .then(() => app.listen(PORT, () => console.log(`Server running on http://127.0.0.1:${PORT}`)))
+    .then(() => app.listen(PORT, () => {
+        console.log(`Server running on http://127.0.0.1:${PORT}`)
+        console.log(`Check server health http://127.0.0.1:${PORT}/api/healthcheck`);
+    }))
     .catch((err) => console.log("App listening error: ", err))

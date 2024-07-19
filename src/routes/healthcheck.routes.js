@@ -3,7 +3,6 @@ import { healthCheck } from "../controllers/healthcheck.controllers.js";
 
 const router = new Router();
 
-router.route('/api/v1/healthcheck').get(healthCheck)
-// router.get('/api/v1/healthcheck', healthCheck);
+router.route('/api/healthcheck').get(healthCheck)
 
 export default router;
