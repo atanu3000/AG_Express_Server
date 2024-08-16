@@ -2,7 +2,7 @@ import mongoose, { Schema } from 'mongoose';
 
 const chatContentSchema = new Schema(
     {
-        part: {
+        parts: {
             type: String,
             required: true
         },

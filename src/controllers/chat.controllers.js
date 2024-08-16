@@ -108,7 +108,8 @@ export const filterChatByUserId = asyncHandler((req, res) => {
             .then((user) => {
                 Chat
                     .find({ userId: uid })
-                    .select('-userId')
+                    .sort({ updatedAt: -1 })
+                    .select('_id title')
                     .then((chat) =>
                         res.status(200)
                             .json(new ApiResponse(200, chat, "all matched chats fetched")))
